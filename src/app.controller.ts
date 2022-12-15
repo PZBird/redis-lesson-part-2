@@ -14,6 +14,11 @@ export class AppController {
     return this.appService.generateList();
   }
 
+  @Get('flush-list')
+  async flushList() {
+    return this.appService.flushList();
+  }
+
   @Get('len')
   async readStrings() {
     return this.appService.getLength();

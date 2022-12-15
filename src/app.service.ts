@@ -10,7 +10,7 @@ export class AppService {
    */
   async generateList() {
     const start = Date.now();
-    const limit = 1_000_000;
+    const limit = 100_000;
 
     for (let i = 0; i < limit; i++) {
       const value = this.randomIntFromInterval(1, 10_000);
@@ -21,6 +21,10 @@ export class AppService {
     const end = Date.now();
 
     return `Strings. List for ${limit} generated in ${end - start}ms`;
+  }
+
+  async flushList() {
+    await this.redis.del(`list`);
   }
 
   /**
