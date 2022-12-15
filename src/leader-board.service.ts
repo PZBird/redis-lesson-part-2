@@ -38,6 +38,10 @@ export class LeaderBoardService {
     return this.redis.zrange(`lb`, 0, number, 'WITHSCORES');
   }
 
+  async mypos(id: string) {
+    return this.redis.zrevrank(`lb`, id);
+  }
+
   private randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }

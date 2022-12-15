@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { AppService } from './app.service';
 import { LeaderBoardService } from './leader-board.service';
 
@@ -47,5 +47,10 @@ export class AppController {
   @Get('top-ten')
   async top() {
     return this.leaderBoardService.top();
+  }
+
+  @Get('my/:id')
+  async mypos(@Param('id') id: string) {
+    return this.leaderBoardService.mypos(id);
   }
 }
