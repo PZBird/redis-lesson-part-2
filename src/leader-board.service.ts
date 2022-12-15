@@ -35,7 +35,7 @@ export class LeaderBoardService {
   }
 
   async top(number = 10) {
-    return this.redis.zrange(`lb`, 0, number, 'WITHSCORES');
+    return this.redis.zrange(`lb`, -number, -1, 'WITHSCORES');
   }
 
   async mypos(id: string) {

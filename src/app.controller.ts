@@ -49,7 +49,7 @@ export class AppController {
     return this.leaderBoardService.recalcScore();
   }
 
-  @Get('top-ten')
+  @Get('top')
   async top() {
     return this.leaderBoardService.top();
   }
