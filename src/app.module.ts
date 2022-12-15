@@ -2,7 +2,7 @@ import { RedisModule } from '@liaoliaots/nestjs-redis';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { BenchMarkService } from './leader-board.service';
+import { LeaderBoardService } from './leader-board.service';
 
 @Module({
   imports: [
@@ -13,6 +13,6 @@ import { BenchMarkService } from './leader-board.service';
     }),
   ],
   controllers: [AppController],
-  providers: [AppService, BenchMarkService],
+  providers: [AppService, LeaderBoardService],
 })
 export class AppModule {}
